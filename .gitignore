@@ -1,0 +1,58 @@
+# Hypercore/Hyperdrive storage
+.cfs
+.storage
+
+# FFmpeg artifacts
+ffmpeg/*
+*.264
+segment*264
+
+# Worker state
+.worker
+
+# Build output
+builds/
+dist/
+bin/*
+
+# Encoded outputs (not source-controlled)
+outputs
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Lockfile (project preference)
+*lock.json
+
+# Runtime data
+pids
+*.pid
+*.pid.lock
+
+# Coverage
+coverage
+.nyc_output
+.c8_output
+
+# Dependencies
+node_modules/
+
+# eslint cache
+.eslintcache
+
+# npm pack output
+*.tgz
+
+# dotenv
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude docs (analysis/planning, not source code)
+claudedocs/
+
+*.storage*

@@ -1,0 +1,14 @@
+{
+  "binaries": {
+    "ffprobe": "ffprobe"
+  },
+  "defaults": {
+    "id": "supernovao/pool",
+    "key": null,
+    "profile": "work"
+  },
+  "encoders": {
+    "ffmpeg": "ffmpeg",
+    "intel": null
+  }
+}

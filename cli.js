@@ -189,6 +189,8 @@ const commands = {
     const swarm = makeSwarm()
     const peer = await join(arg, drive, swarm)
     peer.on('segment-claimed', (info) => logger.info(info))
+    peer.on('segment-encoded', (info) => logger.info(info))
+    peer.on('encode-error', (info) => logger.error(info))
     peer.on('no-work', () => logger.info('No work available'))
     await untilSigint()
     await peer.destroy()
@@ -222,6 +224,8 @@ const commands = {
     const swarm = makeSwarm()
     const peer = await join(arg, drive, swarm)
     peer.on('segment-claimed', (info) => logger.info(info))
+    peer.on('segment-encoded', (info) => logger.info(info))
+    peer.on('encode-error', (info) => logger.error(info))
     peer.on('no-work', () => logger.info('No work available'))
     await untilSigint()
     await peer.destroy()
@@ -234,6 +238,7 @@ const commands = {
     await pool.createPoolDrive()
     await pool.loadConfig()
     const encOpts = await prepareOpts(pool.drive, opts.bitrate, opts.level)
+    pool.encodeOpts = encOpts
     logger.info({
       key: IdEnc.normalize(pool.drive.key),
       encodeOptions: encOpts
